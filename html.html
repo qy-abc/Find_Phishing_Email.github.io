@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .top-bar {
+    background-color: #3498db;
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    }
+
+    .main-container {
+    display: flex;
+    height: calc(100vh - 50px);
+    margin-top: 50px;
+    }
+
+    .sidebar {
+    width: 30%;
+    background-color: #f4f4f4;
+    border-right: 1px solid #ccc;
+    overflow-y: auto;
+    padding: 10px;
+    }
+
+    .email-preview {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+    }
+
+    .email-preview:hover {
+    background-color: #eaf4fc;
+    border-color: #3498db;
+    }
+
+    .email-subject {
+    font-weight: bold;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+
+    .email-snippet {
+    font-size: 13px;
+    color: #555;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }
+
+    .email-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #ffffff;
+    overflow-y: auto;
+    }
+
+    .email-body {
+    white-space: pre-wrap;
+    font-size: 14px;
+    }
+
+    /* Responsive layout for mobile */
+    @media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: 40%;
+    }
+
+    .email-content {
+        height: 60%;
+    }
+    }
+
+  </style>
+</head>
+<body>
+
+    <div class="top-bar"></div> 
+
+    <div class="main-container">
+      <div class="sidebar">
+        <div class="email-preview" onclick="showEmail(0)">
+          <div class="email-subject">[CTF] Password Reset Request</div>
+          <div class="email-snippet">We received a request to reset your password...</div>
+        </div>
+        <div class="email-preview" onclick="showEmail(1)">
+          <div class="email-subject">Internal Memo: Security Update</div>
+          <div class="email-snippet">All employees must update their workstations...</div>
+        </div>
+        <div class="email-preview" onclick="showEmail(2)">
+          <div class="email-subject">RE: Access Logs from 13th May</div>
+          <div class="email-snippet">Here are the logs you requested. Let me know...</div>
+        </div>
+      </div>
+  
+      <div class="vertical-divider"></div> 
+  
+      <div class="email-content" id="emailContent">
+        <div class="email-subject" id="subject">Select an email to view</div>
+        <div class="email-body" id="body">The email content will appear here.</div>
+      </div>
+    </div>
+
+  <script>
+    const emails = [
+      {
+        subject: "Sign up form 1",
+        body: `Dear User,
+
+Text
+
+Click the link below to sign up:
+
+
+Regards,
+CCA Admin Team`
+      },
+      {
+        subject: "Sign up form 2",
+        body: `Hello Team,
+
+Please update your antivirus definitions before Friday. A new threat targeting outdated systems has been identified.
+
+Stay safe,
+IT Department`
+      },
+      {
+        subject: "Sign up form 3",
+        body: `Hi,
+
+Attached are the access logs from May 13. Look at the suspicious activity from 14:32 to 14:47. The IP 192.168.13.37 seems unusual.
+
+Cheers,
+Log Analyst`
+      }
+    ];
+
+    function showEmail(index) {
+      const email = emails[index];
+      document.getElementById('subject').innerText = email.subject;
+      document.getElementById('body').innerText = email.body;
+    }
+  </script>
+
+</body>
+</html>
