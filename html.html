@@ -2,95 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <style>
-    .top-bar {
-    background-color: #3498db;
-    height: 50px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    }
-
-    .main-container {
-    display: flex;
-    height: calc(100vh - 50px);
-    margin-top: 50px;
-    }
-
-    .sidebar {
-    width: 30%;
-    background-color: #f4f4f4;
-    border-right: 1px solid #ccc;
-    overflow-y: auto;
-    padding: 10px;
-    }
-
-    .email-preview {
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: hidden;
-    }
-
-    .email-preview:hover {
-    background-color: #eaf4fc;
-    border-color: #3498db;
-    }
-
-    .email-subject {
-    font-weight: bold;
-    font-size: 14px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    }
-
-    .email-snippet {
-    font-size: 13px;
-    color: #555;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    }
-
-    .email-content {
-    flex-grow: 1;
-    padding: 20px;
-    background-color: #ffffff;
-    overflow-y: auto;
-    }
-
-    .email-body {
-    white-space: pre-wrap;
-    font-size: 14px;
-    }
-
-    /* Responsive layout for mobile */
-    @media (max-width: 768px) {
-    .main-container {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        height: 40%;
-    }
-
-    .email-content {
-        height: 60%;
-    }
-    }
-
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <div class="top-bar"></div> 
@@ -101,10 +15,16 @@
           <div class="email-subject">Account Suspention Notice</div>
           <div class="email-snippet">Urgent Notice: Your Account Has Been Suspended!</div>
         </div>
+
+
+
         <div class="email-preview" onclick="showEmail(1)">
           <div class="email-subject">Claim Your Free iPhone!!!</div>
           <div class="email-snippet">WINNER!!! Confirm Your FREE iPhone 15 Now</div>
         </div>
+
+
+
         <div class="email-preview" onclick="showEmail(2)">
           <div class="email-subject">Meeting Reminder and Agenda</div>
           <div class="email-snippet">Project Sync – Meeting Reminder & Agenda for May 15th</div>
@@ -152,6 +72,8 @@ Your email has been choosen as the winner of a brand new iPhone 15 Pro Max! This
 To claim, just confirm your shipping informations and pay the small $3.99 processing fee here:
 
 Claim Prize Now
+
+<a href="claim-iphone.html" target="_blank" style="color: red; font-weight: bold;">Claim Prize Now</a><br>
 
 Don't miss out! If this is not claimed within 12 hours, your prize will given to someone else. We not asking for anything else — no long forms, no hassle!
 
