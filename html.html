@@ -98,16 +98,16 @@
     <div class="main-container">
       <div class="sidebar">
         <div class="email-preview" onclick="showEmail(0)">
-          <div class="email-subject">[CTF] Password Reset Request</div>
-          <div class="email-snippet">We received a request to reset your password...</div>
+          <div class="email-subject">Account Suspention Notice</div>
+          <div class="email-snippet">Urgent Notice: Your Account Has Been Suspended!</div>
         </div>
         <div class="email-preview" onclick="showEmail(1)">
-          <div class="email-subject">Internal Memo: Security Update</div>
-          <div class="email-snippet">All employees must update their workstations...</div>
+          <div class="email-subject">Claim Your Free iPhone!!!</div>
+          <div class="email-snippet">WINNER!!! Confirm Your FREE iPhone 15 Now</div>
         </div>
         <div class="email-preview" onclick="showEmail(2)">
-          <div class="email-subject">RE: Access Logs from 13th May</div>
-          <div class="email-snippet">Here are the logs you requested. Let me know...</div>
+          <div class="email-subject">Meeting Reminder and Agenda</div>
+          <div class="email-snippet">Project Sync – Meeting Reminder & Agenda for May 15th</div>
         </div>
       </div>
   
@@ -122,34 +122,69 @@
   <script>
     const emails = [
       {
-        subject: "Sign up form 1",
-        body: `Dear User,
+        subject: "Account Suspention Notice",
+        body: `Dear Custumer,
 
-Text
+We have notice unusual activity in your bank account. As a precaution, we have temporarly suspended your online access to protect your informations.
 
-Click the link below to sign up:
+To restore access, please verify your identity using the secure link below:
+
+Click Here to Re-Activate Your Account
+
+If verification is not completed within 24 hours, your account will be permanently locked and may result in loss of access to funds. We apologies for any inconvenience.
+
+Please do not ignore this message. It is very important that you take action right away.
+
+Thank you for being a loyal costumer.
 
 
-Regards,
-CCA Admin Team`
+Sincerely,
+Security Team
+GlobalSafe Bank Ltd.
+`
       },
       {
-        subject: "Sign up form 2",
-        body: `Hello Team,
+        subject: "Claim Your Free iPhone!!!",
+        body: `Congratualtions!
 
-Please update your antivirus definitions before Friday. A new threat targeting outdated systems has been identified.
+Your email has been choosen as the winner of a brand new iPhone 15 Pro Max! This exclusive reward is only available for a limited time.
 
-Stay safe,
-IT Department`
+To claim, just confirm your shipping informations and pay the small $3.99 processing fee here:
+
+Claim Prize Now
+
+Don't miss out! If this is not claimed within 12 hours, your prize will given to someone else. We not asking for anything else — no long forms, no hassle!
+
+Act now and enjoy your free device!
+
+Support available at 
+[Link to support page]
+
+Thank you,
+Apple Rewardz Team`
       },
       {
-        subject: "Sign up form 3",
-        body: `Hi,
+        subject: "Meeting Reminder and Agenda",
+        body: `Hi Team,
 
-Attached are the access logs from May 13. Look at the suspicious activity from 14:32 to 14:47. The IP 192.168.13.37 seems unusual.
+Just a reminder that we have our scheduled Project Sync Meeting this Wednesday, May 15th at 10:00 AM (Room 301 / Zoom link below). Please ensure you’re prepared with your latest updates on the rollout timeline.
 
-Cheers,
-Log Analyst`
+Agenda:
+1.	Progress updates on each module (5 mins each)
+2.	Discussion on identified blockers and mitigation plans
+3.	QA testing status
+4.	Client feedback & follow-up actions
+5.	AOB (Any Other Business)
+
+Please upload any relevant documents to the shared drive by EOD Tuesday so we can review them in advance. If you’re unable to attend, let me know beforehand and send your updates via email.
+
+Looking forward to a productive session.
+
+
+Best regards,
+Rachel Tan
+Project Manager | Digital Solutions
+rachel.tan@yourcompany.com`
       }
     ];
 
