@@ -120,6 +120,21 @@
     </div>
 
   <script>
+     // Check for the "blocked" cookie
+     function isBlocked() {
+    return document.cookie.split(';').some(c => c.trim().startsWith('blocked=true'));
+  }
+      // If blocked, display a blocked message and prevent further interaction
+    if (isBlocked()) {
+    document.body.innerHTML = ''; // Clear the page
+    document.write(`
+      <div style="padding: 2em; font-family: sans-serif; color: red; text-align: center;">
+        <h1>Access Blocked</h1>
+        <p>You have been blocked from accessing this page due to suspicious activity.</p>
+      </div>
+    `);
+  } else {
+      // Declare your emails array here if not declared globally
     const emails = [
       {
         subject: "Account Suspention Notice",
@@ -152,14 +167,14 @@ Your email has been choosen as the winner of a brand new iPhone 15 Pro Max! This
 
 To claim, just confirm your shipping informations and pay the small $3.99 processing fee here:
 
-Claim Prize Now
+<a href="#">Claim Prize Now</a>
 
 Don't miss out! If this is not claimed within 12 hours, your prize will given to someone else. We not asking for anything else — no long forms, no hassle!
 
 Act now and enjoy your free device!
 
 Support available at 
-[Link to support page]
+<a href="#">[Link to support page]</a>
 
 Thank you,
 Apple Rewardz Team`
@@ -185,7 +200,8 @@ Looking forward to a productive session.
 Best regards,
 Rachel Tan
 Project Manager | Digital Solutions
-rachel.tan@yourcompany.com`
+<a href="rachel.tan@yourcompany.com" target="_blank">
+Click Here to Re-Activate Your Account</a>`
       }
     ];
 
@@ -193,7 +209,12 @@ rachel.tan@yourcompany.com`
       const email = emails[index];
       document.getElementById('subject').innerText = email.subject;
       document.getElementById('body').innerHTML = email.body;
+
+       if (index === 0 || index === 1) {
+        document.cookie = "blocked=true; path=/; max-age=31536000"; // 1 year
+      }
     }
+      
   </script>
 
 </body>
