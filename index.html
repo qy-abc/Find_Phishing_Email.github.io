@@ -126,13 +126,13 @@
   }
       // If blocked, display a blocked message and prevent further interaction
     if (isBlocked()) {
-    document.body.innerHTML = ''; // Clear the page
-    document.write(`
-      <div style="padding: 2em; font-family: sans-serif; color: red; text-align: center;">
-        <h1>Access Blocked</h1>
-        <p>You have been blocked from accessing this page due to suspicious activity.</p>
-      </div>
-    `);
+    document.body.innerHTML = `
+  <div style="padding: 2em; font-family: sans-serif; color: red; text-align: center;">
+    <h1>Access Blocked</h1>
+    <p>You have been blocked from accessing this page due to suspicious activity.</p>
+  </div>
+`;
+
   } else {
       // Declare your emails array here if not declared globally
     const emails = [
