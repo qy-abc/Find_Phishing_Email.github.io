@@ -120,6 +120,21 @@
     </div>
 
   <script>
+    // Check for the "blocked" cookie
+     function isBlocked() {
+    return document.cookie.split(';').some(c => c.trim().startsWith('blocked=true'));
+  }
+      // If blocked, display a blocked message and prevent further interaction
+    if (isBlocked()) {
+    document.body.innerHTML = ''; // Clear the page
+    document.write(`
+      <div style="padding: 2em; font-family: sans-serif; color: red; text-align: center;">
+        <h1>Access Blocked</h1>
+        <p>You have been blocked from accessing this page due to suspicious activity.</p>
+      </div>
+    `);
+  } else {
+      // Declare your emails array here if not declared globally
     const emails = [
       {
         subject: "Account Suspention Notice",
@@ -193,6 +208,10 @@ rachel.tan@yourcompany.com`
       const email = emails[index];
       document.getElementById('subject').innerText = email.subject;
       document.getElementById('body').innerHTML = email.body;
+
+       if (index === 0 || index === 1) {
+        document.cookie = "blocked=true; path=/; max-age=31536000"; // 1 year
+      }
     }
   </script>
 
