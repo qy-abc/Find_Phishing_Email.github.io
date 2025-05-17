@@ -69,6 +69,11 @@ white-space: pre-wrap;
 font-size: 14px;
 }
 
+
+
+
+
+
 /* Responsive layout for mobile */
 @media (max-width: 768px) {
     .main-container {
@@ -84,3 +89,4 @@ font-size: 14px;
         height: 60%;
     }
 }
+
