@@ -1,0 +1,17 @@
+
+.top-bar {
+background-color: #3dc132;
+height: 50px;
+width: 100%;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 1000;
+}
+
+
+.form {
+    align-items: center;
+    height:0%;
+}
+

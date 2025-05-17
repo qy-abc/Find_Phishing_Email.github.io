@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Inbox</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -71,9 +72,7 @@ Your email has been choosen as the winner of a brand new iPhone 15 Pro Max! This
 
 To claim, just confirm your shipping informations and pay the small $3.99 processing fee here:
 
-Claim Prize Now
-
-<a href="claim-iphone.html" target="_blank" style="color: red; font-weight: bold;">Claim Prize Now</a><br>
+<a href="claim-iphone.html" target="_blank" style="color: blue; font-weight: bold;">Claim Prize Now</a>
 
 Don't miss out! If this is not claimed within 12 hours, your prize will given to someone else. We not asking for anything else — no long forms, no hassle!
 
@@ -88,7 +87,7 @@ Apple Rewardz Team`
       {
         subject: "Meeting Reminder and Agenda",
         body: `Hi Team,
-
+        
 Just a reminder that we have our scheduled Project Sync Meeting this Wednesday, May 15th at 10:00 AM (Room 301 / Zoom link below). Please ensure you’re prepared with your latest updates on the rollout timeline.
 
 Agenda:
@@ -113,7 +112,7 @@ rachel.tan@yourcompany.com`
     function showEmail(index) {
       const email = emails[index];
       document.getElementById('subject').innerText = email.subject;
-      document.getElementById('body').innerText = email.body;
+      document.getElementById('body').innerHTML = email.body;
     }
   </script>
 
