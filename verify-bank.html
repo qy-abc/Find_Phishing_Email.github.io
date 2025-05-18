@@ -29,19 +29,24 @@
       <button type="submit">Verify Account</button>
     </form>
 
-    <div class="message" id="thankYouMessage">
-      ✅ Verification received. Thank you.
+    <div class="popup" id="popup">
+    <span class="close-btn" onclick="document.getElementById('popup').style.display='none'">&times;</span>
+    <h2>You've Been Hacked!</h2>
+    <p>Your sensitive information has been stolen.</p>
+    <p>Please return to the inbox and try again.</p>
+    <button onclick="window.location.href='index.html'">Try Again</button>
     </div>
   </div>
 
   <script>
-    const form = document.getElementById("verifyForm");
-    const message = document.getElementById("thankYouMessage");
-    form.addEventListener("submit", function(event) {
-      event.preventDefault();
-      form.reset();
-      message.style.display = "block";
-    });
+  const form = document.getElementById("verifyForm");
+  const popup = document.getElementById("popup");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    form.reset();
+    popup.style.display = "block";
+  });
   </script>
 </body>
 </html>
