@@ -124,6 +124,11 @@
      function isBlocked() {
     return document.cookie.split(';').some(c => c.trim().startsWith('blocked=true'));
   }
+
+    function blockAndRedirect(url) {
+      document.cookie = "blocked=true; path=/; max-age=3153600"; // 1 year
+      window.location.href = url;
+    }
      
     const emails = [
       {
@@ -134,7 +139,7 @@ We have noticed unusual activity in your bank account. As a precaution, we have 
 
 To restore access, please verify your identity using the secure link below:
 
-<a href="/Find_Phishing_Email.github.io/verify-bank.html" style="color: red; font-weight: bold;">Click Here to Re-Activate Your Account</a>
+<a href="#" onclick=\"blockAndRedirect('/Find_Phishing_Email.github.io/verify-bank.html')\" style="color: red; font-weight: bold;">Click Here to Re-Activate Your Account</a>
 
 If verification is not completed within 24 hours, your account will be permanently locked and may result in loss of access to funds. We apologies for any inconvenience.
 
@@ -147,16 +152,16 @@ Sincerely,
 Security Team
 GlobalSafe Bank Ltd.
 `
-      },
-      {
-        subject: "Claim Your Free iPhone!!!",
-        body: `Congratualtions!
-
-Your email has been choosen as the winner of a brand new iPhone 15 Pro Max! This exclusive reward is only available for a limited time.
-
-To claim, just confirm your shipping informations and pay the small $3.99 processing fee here:
-
-<a href="/Find_Phishing_Email.github.io/claim-iphone.html" style="color: blue; font-weight: bold;">Claim Prize Now</a>
+},
+{
+  subject: "Claim Your Free iPhone!!!",
+  body: `Congratualtions!
+  
+  Your email has been choosen as the winner of a brand new iPhone 15 Pro Max! This exclusive reward is only available for a limited time.
+  
+  To claim, just confirm your shipping informations and pay the small $3.99 processing fee here:
+  
+  <a href="#" onclick=\"blockAndRedirect('/Find_Phishing_Email.github.io/claim-iphone.html')\" style="color: blue; font-weight: bold;">Claim Prize Now</a>
 
 Don't miss out! If this is not claimed within 12 hours, your prize will given to someone else. We not asking for anything else — no long forms, no hassle!
 
@@ -187,8 +192,7 @@ Looking forward to a productive session.
 Best regards,
 Rachel Tan
 Project Manager | Digital Solutions
-<a href="/Find_Phishing_Email.github.io/meeting-agenda.html">
-rachel.tan@Nvidia.com</a>`
+<a href="/Find_Phishing_Email.github.io/meeting-agenda.html">rachel.tan@Nvidia.com</a>`
       }
     ];
 
@@ -202,9 +206,6 @@ rachel.tan@Nvidia.com</a>`
     document.getElementById('subject').innerText = email.subject;
     document.getElementById('body').innerHTML = email.body;
 
-    if (index === 0 || index === 1) { // this line is wack 😂
-      document.cookie = "blocked=true; path=/; max-age=31536000"; // 1 year
-    }
   }
 
   function displayBlockedMessage() {
