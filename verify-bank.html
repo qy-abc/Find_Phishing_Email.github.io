@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Verify Your Bank Account</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="bank-styles.css">
+</head>
+
+<body>
+  <div class="form-container">
+    <h2>Bank Account Verification</h2>
+    <form id="verifyForm">
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Your Username" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Your Password" required>
+
+      <label for="card">Credit Card Number</label>
+      <input type="tel" id="card" placeholder="1234 5678 9876 5432" required>
+
+      <label for="expiry">Expiry Date</label>
+      <input type="text" id="expiry" placeholder="MM/YY" required>
+
+      <label for="cvv">CVV</label>
+      <input type="text" id="cvv" placeholder="123" maxlength="4" required>
+
+      <button type="submit">Verify Account</button>
+    </form>
+
+    <div class="popup" id="popup">
+    <span class="close-btn" onclick="document.getElementById('popup').style.display='none'">&times;</span>
+    <h2>You've Been Hacked!</h2>
+    <p>Your sensitive information has been stolen.</p>
+    <p>Please return to the inbox and try again.</p>
+    <button onclick="window.location.href='index.html'">Try Again</button>
+    </div>
+  </div>
+
+  <script>
+  const form = document.getElementById("verifyForm");
+  const popup = document.getElementById("popup");
+
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    form.reset();
+    popup.style.display = "block";
+  });
+  </script>
+</body>
+</html>
