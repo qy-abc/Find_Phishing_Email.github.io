@@ -192,27 +192,21 @@ rachel.tan@Nvidia.com</a>`
       }
     ];
 
-    function showEmail(index) {
-      if (isBlocked()) {
-      document.body.innerHTML = `
-        <div style="padding: 2em; font-family: sans-serif; color: red; text-align: center;">
-          <h1>Access Blocked</h1>
-          <p>You have been blocked from accessing this page due to suspicious activity.</p>
-        </div>
-      `;
+    if (isBlocked()) {
+      displayBlockedMessage();
       return;
     }
-      
-      const email = emails[index];
-      document.getElementById('subject').innerText = email.subject;
-      document.getElementById('body').innerHTML = email.body;
 
-       if (index === 0 || index === 1) {
-        document.cookie = "blocked=true; path=/; max-age=31536000"; // 1 year
-      }
+    const email = emails[index];
+    document.getElementById('subject').innerText = email.subject;
+    document.getElementById('body').innerHTML = email.body;
+
+    if (index === 0 || index === 1) {
+      document.cookie = "blocked=true; path=/; max-age=31536000"; // 1 year
     }
-    // If already blocked, display block message immediately
-  if (isBlocked()) {
+  }
+
+  function displayBlockedMessage() {
     document.body.innerHTML = `
       <div style="padding: 2em; font-family: sans-serif; color: red; text-align: center;">
         <h1>Access Blocked</h1>
@@ -220,6 +214,13 @@ rachel.tan@Nvidia.com</a>`
       </div>
     `;
   }
+
+  // Ensure everything runs after DOM is loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    if (isBlocked()) {
+      displayBlockedMessage();
+    }
+  });
       
   </script>
 
