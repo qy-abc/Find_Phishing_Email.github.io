@@ -187,7 +187,7 @@ Looking forward to a productive session.
 Best regards,
 Rachel Tan
 Project Manager | Digital Solutions
-<a href="/Find_Phishing_Email.github.io/legitimate_page.html">
+<a href="/Find_Phishing_Email.github.io/meeting-agenda.html">
 rachel.tan@Nvidia.com</a>`
       }
     ];
@@ -202,7 +202,7 @@ rachel.tan@Nvidia.com</a>`
     document.getElementById('subject').innerText = email.subject;
     document.getElementById('body').innerHTML = email.body;
 
-    if (index === 0 || index === 1) {
+    if (index === 0 || index === 1) { // this line is wack 😂
       document.cookie = "blocked=true; path=/; max-age=31536000"; // 1 year
     }
   }

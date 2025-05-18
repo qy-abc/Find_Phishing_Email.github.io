@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Legitimate Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f0f8ff;
+    }
+
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border: 2px solid #3498db;
+      padding: 20px;
+      z-index: 1000;
+      display: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      max-width: 400px;
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .popup h2 {
+      color: green;
+    }
+
+    .popup p {
+      font-family: monospace;
+      color: #333;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 18px;
+      cursor: pointer;
+      color: red;
+    }
+
+    .content {
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <h1>Welcome to the Legitimate Page</h1>
+    <p>This is a placeholder page simulating a trusted, safe environment.</p>
+    <p>Please wait while we process your request...</p>
+  </div>
+
+  <div class="popup" id="popup">
+    <span class="close-btn" onclick="window.location.href='https://learn.nullsecsig.com/'">&times;</span>
+    <h2>Congratulations!</h2>
+    <p>You have solved the challenge!</p>
+    <p><strong>The flag is:</strong></p>
+    <p><code>flag{flaggalf_galfflag_1234567890}</code></p>
+  </div>
+
+  <script>
+    // Show popup after 10 seconds
+    setTimeout(() => {
+      document.getElementById("popup").style.display = "block";
+    },  2000);
+  </script>
+
+</body>
+</html>
